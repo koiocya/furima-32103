@@ -31,11 +31,11 @@ Things you may want to cover:
 | ------------------ | ------- | ----------- |
 | nickname           | string  | null: false |
 | email              | string  | null: false |
-| encrypted_password | date    | null: false |
-| first_name         | date    | null: false |
-| first_name_reading | date    | null: false |
-| last_name          | date    | null: false |
-| last_name_reading  | date    | null: false |
+| encrypted_password | string  | null: false |
+| first_name         | string  | null: false |
+| first_name_reading | string  | null: false |
+| last_name          | string  | null: false |
+| last_name_reading  | string  | null: false |
 | birthday           | date    | null: false |
 
 ### Association
@@ -45,17 +45,17 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column                  | Type    | Options     |
-| ----------------------- | --------------------- | 
-| explain_id              | text    | null: false |
-| name_id                 | string  | null: false |
-| category_id             | string  | null: false |
-| sales_status_id         | string  | null: false |
-| shipping_fee_status_id  | integer | null: false |
-| prefecture_id           | integer | null: false |
-| scheduled_delivery_id   | integer | null: false |
-| price_id                | integer | null: false |
-| user_id                 | integer | null: false |
+| Column                  | Type       | Options     |
+| ----------------------- | ---------- |------------ | 
+| explain                 | text       | null: false |
+| name                    | string     | null: false |
+| category_id             | references | null: false |
+| sales_status_id         | references | null: false |
+| shipping_fee_status_id  | references | null: false |
+| prefecture_id           | references | null: false |
+| scheduled_delivery_id   | references | null: false |
+| price                   | integer    | null: false |
+| user_id                 | references | null: false |
 
 
 ### Association
@@ -84,7 +84,8 @@ Things you may want to cover:
 | city          | string     | null: false |
 | house_number  | string     | null: false |
 | building_name | string     |             |
-| order_id      | references | null: false, foreign_key: true |
+| phone_number  | string     | null: false |
+| order         | references | null: false, foreign_key: true |
 
 ### Association
 
