@@ -49,13 +49,13 @@ Things you may want to cover:
 | ----------------------- | ---------- |------------ | 
 | explain                 | text       | null: false |
 | name                    | string     | null: false |
-| category_id             | references | null: false |
-| sales_status_id         | references | null: false |
-| shipping_fee_status_id  | references | null: false |
-| prefecture_id           | references | null: false |
-| scheduled_delivery_id   | references | null: false |
+| category_id             | string     | null: false |
+| sales_status_id         | string     | null: false |
+| shipping_fee_status_id  | string     | null: false |
+| prefecture_id           | string     | null: false |
+| scheduled_delivery_id   | string     | null: false |
 | price                   | integer    | null: false |
-| user_id                 | references | null: false |
+| user                    | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -79,8 +79,8 @@ Things you may want to cover:
 
 | Column        | Type       | Options     |
 | ------------- | ---------- | ----------- |
-| post_code     | string     | null: false |
-| prefecture    | string     | null: false |
+| post_code_id  | integer    | null: false |
+| prefecture_id | integer    | null: false |
 | city          | string     | null: false |
 | house_number  | string     | null: false |
 | building_name | string     |             |
